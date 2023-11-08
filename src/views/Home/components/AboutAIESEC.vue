@@ -1,5 +1,5 @@
 <template>
-   <section class="  text-white overflow-x-hidden relative h-[1000px] md:h-auto" id="about-aiesec">
+   <section class="  text-white overflow-hidden relative h-[1000px] md:h-auto" id="about-aiesec">
         <div class="container mx-auto max-w-7xl px-6 xl:px-0 mb-20 py-20 lg:my-24 z-[20] relative">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-24">
                 <div class=" relative z-[10] ">

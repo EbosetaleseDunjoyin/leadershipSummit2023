@@ -1,6 +1,6 @@
 <template>
     <div class="relative overflow-hidden">
-        <section class=" bg-[#171616] text-white overflow-x-hidden relative" id="our-theme">
+        <section class=" bg-[#171616] text-white overflow-hidden relative" id="our-theme">
                 <div class="container mx-auto max-w-7xl px-6 xl:px-0 my-10 lg:my-24  relative">
                     <div class=" relative z-[10] mb-36">
                         <div class=" fcd text-dpurple w-fit font-medium text-xl lg:text-[34px]  my-4 rounded-lg">
@@ -35,7 +35,7 @@
                 </div>
                 
         </section>
-        <section class=" bg-[#1B1A1A] text-white overflow-x-hidden relative" >
+        <section class=" bg-[#1B1A1A] text-white overflow-hidden relative" >
             <div class="container mx-auto max-w-7xl px-6 xl:px-0 my-10 lg:my-24  relative">
                 <div class="grid lg:grid-cols-3 grid-cols-1  ">
                     <div class=" relative z-[10] col-span-2 mb-36">

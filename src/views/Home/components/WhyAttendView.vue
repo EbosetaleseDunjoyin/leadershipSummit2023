@@ -1,5 +1,5 @@
 <template>
-   <section class=" text-black overflow-x-hidden relative" id="why-attend">
+   <section class=" text-black overflow-hidden relative" id="why-attend">
         <div class="container mx-auto max-w-7xl px-6 xl:px-0 mt-10 pt-20 lg:my-24  relative">
             <div class=" relative z-[10] mb-36">
                 <div class=" fcd text-black w-fit font-medium text-xl lg:text-[34px]  my-4 rounded-lg">

@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <section class="mt-18 bg-[#171616] text-white overflow-x-hidden relative" id="banner">
+        <section class="mt-18 bg-[#171616] text-white overflow-hidden relative" id="banner">
           <div class="container mx-auto max-w-7xl px-6 xl:px-0  my-10 lg:my-24  relative ">
             <div class="flex lg:flex-row flex-col items-center py-14 lg:py-24 gap-y-24 lg:gap-24">
                 <div class="relative align-center">
@@ -22,11 +22,11 @@
                     <div class="box-img w-[260px] h-[260px] md:w-[435px] md:h-[435px] xl:w-[435px] xl:h-[435px] p-shade relative">
                         
                         <img src="../../../assets/banner-star.svg" class="absolute lg:-top-24 lg:-left-24 -top-16 -left-16 w-30 md:w-[200px] h-auto z-[2] "  alt="">
-                        <img src="../../../assets/tripleGlobe.svg" class="absolute -top-8 -right-8 lg:-top-10 lg:-right-8 w-24 lg:w-38 h-auto z-[2] "  alt="">
-                        <div class="absolute lg:-bottom-20 lg:-left-24 -bottom-10 -left-8 w-20 lg:w-38 h-auto z-[2] p-2 rounded-full bg-[#171616]" >
+                        <img src="../../../assets/tripleGlobe.svg" class="absolute -top-8 -right-8 lg:-top-10 lg:-right-8 w-24 lg:w-40 h-auto z-[2] "  alt="">
+                        <div class="absolute lg:-bottom-20 lg:-left-24 -bottom-10 -left-8 w-20 lg:w-40 h-auto z-[2] p-2 rounded-full bg-[#171616]" >
                             <img src="../../../assets/logo-circle.svg" class=""  alt="">
                         </div>
-                        <img src="../../../assets/greenEye.svg" class="absolute -bottom-10 -right-14 w-28 lg:-bottom-24 lg:-right-28 lg:w-38 h-auto z-[2] "  alt="">
+                        <img src="../../../assets/greenEye.svg" class="absolute -bottom-10 -right-14 w-28 lg:-bottom-16 lg:-right-24 lg:w-44 h-auto z-[2] "  alt="">
                     </div>
                 </div>
             </div>

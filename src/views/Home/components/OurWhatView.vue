@@ -1,5 +1,5 @@
 <template>
-   <section class=" bg-white text-black overflow-x-hidden relative" id="our-what">
+   <section class=" bg-white text-black overflow-hidden relative" id="our-what">
         <div class="container mx-auto max-w-6xl px-4 lg:px-0 my-10 lg:my-24  relative">
             <div class=" relative z-[10] mb-36">
                 <div class=" fcd text-apurple w-fit font-medium text-xl lg:text-[34px]  my-4 rounded-lg">
@@ -45,9 +45,12 @@ export default {
     #our-what{
       .our-what-img{
         background-image: url("../../../assets/ourWHat.jfif");
-        background-position: center;
+        background-position:top -70px center;
         background-size: cover;
         background-repeat: no-repeat;
+        @media screen  and (max-width: 500px ){
+            background-position:top center;
+        }
 
       }
     }

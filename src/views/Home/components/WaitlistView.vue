@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-[#121212]  text-white overflow-x-hidden relative" id="waitlist">
+  <section class="bg-[#121212]  text-white overflow-hidden relative" id="waitlist">
         <div class="container mx-auto max-w-7xl px-6 xl:px-0 my-20 py-20 lg:my-24 z-[20] relative">
             <div class="relative max-w-3xl mx-auto">
                 <h1 class="text-[43px] my-2 text-center max-w-lg mx-auto leading-none"><span class="fl font-semibold" >We're recruiting soon, and</span> <span class="fcd font-light">you can't miss out on it.</span></h1>

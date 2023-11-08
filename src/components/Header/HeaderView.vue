@@ -33,19 +33,19 @@
             <div class="hidden lg:flex">
 
               <div class="hidden lg:flex items-center fcd font-normal gap-x-4 xl:gap-x-8">
-                <a  href="#our-what" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true, "active": isActive("#our-what") }'>
+                <a @click="setActiveName('#our-what')" href="#our-what" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true, "active": isActiveName === "#our-what" }'>
                   Our What
                   <div class=""></div>
                 </a>
-                <a  href="#our-theme" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active": isActive("#our-theme")}'>
+                <a @click="setActiveName('#our-theme')" href="#our-theme" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active": isActiveName === "#our-theme" }'>
                   Our Theme
                   <div class=""></div>
                 </a>
-                <a  href="#why-attend" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active":isActive("#why-attend")}'>
+                <a @click="setActiveName('#why-attend')" href="#why-attend" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active": isActiveName === "#why-attend" }'>
                   Why Attend?
                   <div class=""></div>
                 </a>
-                <a  href="#about-aiesec" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active":isActive("#about-aiesec")}'>
+                <a @click="setActiveName('#about-aiesec')" href="#about-aiesec" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active": isActiveName === "#about-aiesec" }'>
                   About AIESEC
                   <div class=""></div>
                 </a>
@@ -65,23 +65,23 @@
                   <div class="mt-6 flow-root text-[15px]" >
                     <div class=" divide-y divide-white">
                       <div class=" py-6 px-4">
-                        <a href="#our-what" :class='{ "mb-10 flex flex-col justify-center text-center  leading-5 nav-link font-normal ": true, "active": isActive("#our-what") }'>
-                          Our What
-                          <div class=""></div>
-                        </a>
-                        <a href="#our-theme" :class='{ "mb-10 flex flex-col justify-center text-center  leading-5 nav-link font-normal ": true, "active": isActive("#our-theme") }'>
-                          Our Theme
-                          <div class=""></div>
-                        </a>
-                        <a href="#why-attend" :class='{ "mb-10 flex flex-col justify-center text-center  leading-5 nav-link font-normal ": true, "active": isActive("#why-attend") }'>
-                          Why Attend?
-                          <div class=""></div>
-                        </a>
-                        <a href="#about-aiesec" :class='{ "mb-10 flex flex-col justify-center text-center  leading-5 nav-link font-normal ": true, "active": isActive("#about-aiesec") }'>
-                          About AIESEC
-                          <div class=""></div>
-                        </a>
-                  
+                        
+                          <a @click="setActiveName('#our-what')" href="#our-what" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#our-what" }'>
+                            Our What
+                            <div class=""></div>
+                          </a>
+                          <a @click="setActiveName('#our-theme')" href="#our-theme" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#our-theme" }'>
+                            Our Theme
+                            <div class=""></div>
+                          </a>
+                          <a @click="setActiveName('#why-attend')" href="#why-attend" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#why-attend" }'>
+                            Why Attend?
+                            <div class=""></div>
+                          </a>
+                          <a @click="setActiveName('#about-aiesec')" href="#about-aiesec" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#about-aiesec" }'>
+                            About AIESEC
+                            <div class=""></div>
+                          </a>
                       </div>
                     </div>
                   </div>
@@ -109,15 +109,66 @@ export default {
         isActiveName: ""
       }
     },
+    created (){
+      // console.log(window.location.hash)
+      if(window.location.hash){
+        this.isActiveName = window.location.hash
+      }
+      // console.log("is")
+    },
+    mounted() {
+      // Add a scroll event listener
+      window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeUnmount() {
+      // Remove the scroll event listener when the component is destroyed
+      window.removeEventListener('scroll', this.handleScroll);
+    },
     methods: {
       isActive(hash) {
-        if(window.location.href.includes(hash)) { this.isActiveName = hash }
+        // if(window.location.href.includes(hash)) this.isActiveName = hash
         return window.location.href.includes(hash);
+      },
+      setActiveName(hash) {
+        this.isActiveName = hash;
       },
       toggleDropdown(){
         this.dropdown = !this.dropdown
-      }
+      },
+      handleScroll() {
+        // Determine the scroll position
+        // const scrollPosition = window.scrollY;
+
+        // Define the sections or elements and their corresponding markers
+        const sections = [
+          { id: 'our-what', name: '#our-what' },
+          { id: 'our-theme', name: '#our-theme' },
+          { id: 'why-attend', name: '#why-attend' },
+          { id: 'about-aiesec', name: '#about-aiesec' },
+          // Add more sections as needed
+        ];
+
+        // Find the active section based on the scroll position
+        for (const section of sections) {
+          const element = document.getElementById(section.id);
+          if (element) {
+            const { top, height } = element.getBoundingClientRect();
+            if (top <= 0 && top + height >= 0) {
+              this.isActiveName = section.name;
+            }
+          }
+        }
+      },
     },
+    watch: {
+      isActiveName(newIsActiveName, oldIsActiveName) {
+        // console.log(newIsActiveName)
+        this.isActive(newIsActiveName)
+        if (newIsActiveName !== oldIsActiveName) {
+          // You can perform additional actions when isActiveName changes
+        }
+      }
+    }
 }
 </script>
 
