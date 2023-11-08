@@ -111,8 +111,8 @@ export default {
     },
     methods: {
       isActive(hash) {
-        // return window.location.href.includes(hash);
         if(window.location.href.includes(hash)) { this.isActiveName = hash }
+        return window.location.href.includes(hash);
       },
       toggleDropdown(){
         this.dropdown = !this.dropdown
