@@ -56,7 +56,7 @@ export default {
                  };
                
                 console.log(this.email);
-                fetch('/api/submit_email', {
+                fetch('https://ainbackend.fly.dev/api/submit_email', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json', // Set the content type to JSON
