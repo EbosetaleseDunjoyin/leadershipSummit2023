@@ -1,6 +1,6 @@
 <template>
    <section class=" bg-white text-black overflow-hidden relative" id="our-what">
-        <div class="container mx-auto max-w-6xl px-4 lg:px-0 my-10 lg:my-24  relative">
+        <div class="container mx-auto max-w-7xl px-6 xl:px-0 my-10 lg:my-24  relative">
             <div class=" relative z-[10] mb-36">
                 <div class=" fcd text-apurple w-fit font-medium text-xl lg:text-[34px]  my-4 rounded-lg">
                     Empowering Young Leaders
@@ -21,7 +21,7 @@
                     </p>
                </div>
                <div class="flex justify-start my-4">
-                    <a href="#" class="flex white-btn text-black items-center text-[12px] md:text-base border-black  border b-shade">
+                    <a href="/register" class="flex white-btn text-black items-center text-[12px] md:text-base border-black  border b-shade">
                       Register for Leadership Summit 
                       <img class=" ml-1 h-6" src="../../../assets/arrow.svg" alt="">
                     </a>

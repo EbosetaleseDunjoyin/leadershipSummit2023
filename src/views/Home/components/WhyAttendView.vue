@@ -14,7 +14,7 @@
                     </p>
                 </div>
                 <div class="flex justify-start my-4">
-                    <a href="#" class="flex white-btn text-black text-[12px] md:text-base items-center border-black  border b-shade">
+                    <a href="/register" class="flex white-btn text-black text-[12px] md:text-base items-center border-black  border b-shade">
                         Register for Leadership Summit 
                         <svg width="20" height="20" viewBox="0 0 19 19" fill="none" class="ml-1" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.77459 12.1441L12.9773 5.94141" stroke="#000000" stroke-width="0.974661" stroke-linecap="round" stroke-linejoin="round"/>
@@ -25,9 +25,9 @@
             </div>
     
     
-            <img src="../../../assets/Computer.svg" class="absolute lg:-top-10 top-2 -right-4 lg:-right-40 -rotate-[30deg] h-auto w-20 lg:w-44 z-[2] "  alt="">
-            <img src="../../../assets/GlobeGreen.svg" class="absolute lg:-bottom-12 bottom-2 -right-4 lg:-right-32 rotate-[30deg] h-auto w-20 lg:w-44 z-[2] "  alt="">
         </div>
+        <img src="../../../assets/Computer.svg" class="absolute lg:top-8 top-2 -right-4 lg:-right-10 -rotate-[30deg] h-auto w-20 lg:w-44 z-[2] "  alt="">
+        <img src="../../../assets/GlobeGreen.svg" class="absolute lg:bottom-8 bottom-2 -right-4 lg:-right-20 rotate-[30deg] h-auto w-20 lg:w-44 z-[2] "  alt="">
     </section>
 </template>
 

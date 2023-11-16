@@ -6,9 +6,9 @@
 
                     <div class="my-10">
                         <div class=" p-2 lg:p-3 my-3 rounded-lg bg-[rgba(255,255,255,0.15)] w-fit" >
-                            <p class="font-semibold fcd text-xl lg:text-base">
+                            <h5 class="font-semibold fcd text-[18px] lg:text-base">
                                 What is AIESEC?
-                            </p>
+                            </h5>
                         </div>
                         <p class="font-light text-base lg:text-xl ">
                             AIESEC is a youth-led organisation created by and for young people. With a major goal of achieving peace and fulfilment of humankind's potential, AIESEC aims to achieve this by equipping young people with leadership skills. AIESEC helps young people like you become better leaders and create a greater future for yourselves and the world you live in.
@@ -16,9 +16,9 @@
                     </div>
                     <div class="my-10">
                         <div class=" p-2 lg:p-3 my-3 rounded-lg bg-[rgba(255,255,255,0.15)] w-fit" >
-                            <p class="font-semibold fcd text-xl lg:text-base">
+                            <h5 class="font-semibold fcd text-[18px] tracking-normal lg:text-base">
                                 Curious about how we work?
-                            </p>
+                            </h5>
                         </div>
                         <p class="font-light text-base lg:text-xl">
                             As a youth-led organisation, we are a community of young people looking to grow personally and professionally. If you’re a youth who’s looking to join a community of great minds ready to change the world in their own way, AIESEC might just be the place for you.
@@ -30,10 +30,10 @@
             </div>
 
 
-            <img src="../../../assets/earthOrange.svg" class="absolute -top-6 -left-28 lg:-top-28 lg:-left-60 h-auto w-30 lg:w-60 z-[2] "  alt="">
-            <img src="../../../assets/Track.svg" class="absolute -bottom-20 -right-28 lg:bottom-2 lg:-right-40 h-auto w-30 lg:w-60 z-[2] "  alt="">
             
         </div>
+        <img src="../../../assets/earthOrange.svg" class="absolute -top-6 -left-28 lg:top-2 lg:-left-32 h-auto w-30 lg:w-60 z-[2] "  alt="">
+        <img src="../../../assets/Track.svg" class="absolute -bottom-20 -right-28 lg:bottom-2 lg:-right-10 h-auto w-30 lg:w-60 z-[2] "  alt="">
         <div class="bg-gradient"></div>
         <div class="dark-gradient"></div>
         <div class="back-gradient"></div>

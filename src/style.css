@@ -16,11 +16,14 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
+
 }
 
 html {
     scroll-behavior: smooth;
+    min-height: 100vh;
 }
+
 
 /* Font Styles */
 .fr {
@@ -76,8 +79,9 @@ html {
 
 
     }
-    p{
-        text-align:justify;
+
+    p {
+        text-align: justify;
     }
 }
 

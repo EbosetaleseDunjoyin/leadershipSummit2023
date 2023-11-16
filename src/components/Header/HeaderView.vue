@@ -1,6 +1,6 @@
 <template>
   <div class=" min-h-fit lg:h-22 py-4 sticky top-0 border-b-2 bg-black text-white z-50" id="header">
-      <div class=" container mx-auto max-w-7xl px-6  py-2 lg:py-0 xl:px-0">
+      <div class=" container mx-auto max-w-7xl px-6 overflow-x-hidden py-2 lg:py-0 xl:px-0">
         <header class="">
           <nav class=" flex  items-center z-40 justify-between" aria-label="Global">
             <div class="flex  lg:flex-1">
@@ -50,7 +50,7 @@
                   <div class=""></div>
                 </a>
                 
-                <a href="#" class="flex primary-btn px-1 text-black text-[13px] xl:text-base border-white border">
+                <a href="/register" class="flex primary-btn px-1 text-black text-[13px] xl:text-base border-white border">
                   Register for Leadership Summit 
                   <img class=" ml-1  xl:h-6" src="../../assets/arrow.svg" alt="">
                 </a>
@@ -86,7 +86,7 @@
                     </div>
                   </div>
                   <div class="border-t border-[#323232] pt-6 px-4">
-                      <a href="#" class="text-[15px] px-3 flex justify-center text-center border-white border primary-btn text-black">
+                      <a href="/register" class="text-[15px] px-3 flex justify-center text-center border-white border primary-btn text-black">
                           Register for Leadership Summit 
                           <img class=" ml-1 h-6" src="../../assets/arrow.svg" alt="">
                       </a>

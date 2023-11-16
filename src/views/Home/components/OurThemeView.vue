@@ -21,7 +21,7 @@
                             </p>
                        </div>
                        <div class="flex justify-start my-4">
-                            <a href="#" class="flex white-btn text-white text-[12px] lg:text-base items-center border-white  border ">
+                            <a href="register" class="flex white-btn text-white text-[12px] lg:text-base items-center border-white  border ">
                               Register for Leadership Summit 
                               <svg width="20" height="20" viewBox="0 0 19 19" fill="none" class="ml-1" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M6.77459 12.1441L12.9773 5.94141" stroke="#ffffff" stroke-width="0.974661" stroke-linecap="round" stroke-linejoin="round"/>
@@ -51,7 +51,7 @@
                             </p>
                     </div>
                     <div class="flex justify-start my-4">
-                            <a href="#" class="flex white-btn text-white items-center border-white  border ">
+                            <a href="register" class="flex white-btn text-white items-center border-white  border ">
                             Register for Leadership Summit 
                             <svg width="20" height="20" viewBox="0 0 19 19" fill="none" class="ml-1" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6.77459 12.1441L12.9773 5.94141" stroke="#ffffff" stroke-width="0.974661" stroke-linecap="round" stroke-linejoin="round"/>

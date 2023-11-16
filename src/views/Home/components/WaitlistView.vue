@@ -8,10 +8,10 @@
                 </p>
 
                 <div class="waitlist-form flex flex-col justify-center my-10">
-                    <form action="">
+                    <form @submit.prevent="submitMail()" action="" id="waitlistForm">
                         <div class="flex md:flex-row flex-col items-stretch justify-center gap-4">
-                            <input type="email" name="email" placeholder="Enter Email" class="fl" id="">
-                            <button href="#" class=" w-100 flex text-center justify-center primary-btn fcd px-1 text-black text-base border-white border">
+                            <input  type="email" v-model="email" name="email" placeholder="Enter Email" class="fl" id="">
+                            <button type="submit" class=" w-100 flex text-center justify-center primary-btn fcd px-1 text-black text-base border-white border">
                                 Join Waitlist
                                 <img class=" ml-1  xl:h-6" src="../../../assets/arrow.svg" alt="">
                             </button>
@@ -28,17 +28,83 @@
             </div>
 
 
-            <img src="../../../assets/OrangeStar.svg" class="absolute -top-14 -right-8 lg:-top-24  lg:-right-40 h-auto w-20 lg:w-40 z-[2] "  alt="">
-            <img src="../../../assets/pStar.svg" class="absolute bottom-0 -left-12 lg:-left-44 h-auto w-28 lg:w-60 z-[2] "  alt="">
-        
+            
         </div>
+        <img src="../../../assets/OrangeStar.svg" class="absolute -top-2 -right-8 lg:-top-2  lg:-right-10 h-auto w-20 lg:w-40 z-[2] "  alt="">
+        <img src="../../../assets/pStar.svg" class="absolute bottom-0 -left-10 lg:-left-20 h-auto w-28 lg:w-60 z-[2] "  alt="">
         
     </section>
 </template>
 
 <script>
+import Notify from 'simple-notify'
 export default {
-    name: "WaitlistView"
+    name: "WaitlistView",
+    data(){
+        return{
+            email: ""
+        }
+    },
+    methods:{
+        submitMail(){
+           
+            if(this.email === ""){
+                this.notification("error","Error","The email field is required")
+            }else{
+                 let formData = {
+                    email : this.email
+                 };
+               
+                console.log(this.email);
+                fetch('/api/submit_email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json', // Set the content type to JSON
+                    },
+                    body: JSON.stringify(formData), // Convert the data to JSON format
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        // throw new Error('Network response was not ok');
+                        this.notification("error", "Error", "This email already exists with us")
+                    }
+                    return response.json(); // Assuming the response is JSON
+                })
+                .then(data => {
+                    // Handle the data retrieved from the API
+                    this.email = ""
+                    if(data && (data.detail === "registration success")){
+                        this.notification("success", "Success", "Thank you we will be with you shortly")
+                    }else{
+                        this.notification("error", "Error", "This email already exists with us")
+                        
+                    }
+                })
+                .catch(error => {
+                    // Handle errors that occurred during the fetch
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+            }
+        },
+        notification(type, title, message){
+            new Notify({
+                status: type,
+                title: title,
+                text: message,
+                effect: "slide",
+                speed: 2000,
+                showIcon: true,
+                showCloseButton: true,
+                autoclose: true,
+                autotimeout: 5000,
+                gap: 100,
+                distance: 20,
+                type: 1,
+                position: "right top",
+            });
+        }
+
+    }
 }
 </script>
 

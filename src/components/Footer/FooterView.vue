@@ -4,7 +4,7 @@
         <div class="flex flex-col justify-between lg:flex-row sm:gap-x-28 xl:gap-x-40">
           <div class=" my-4">
             <div class="flex  lg:flex-1 col-span-2">
-                <a href="#" class=" flex flex-row items-center fl text-base font-extrabold">
+                <a href="/" class=" flex flex-row items-center fl text-base font-extrabold">
                   <img class="h-18 xl:h-12 w-auto mr-3 " src="../../assets/logo.svg" alt=""> 
                   <span class="hidden xl:block" >Leadership Summit</span>  
                   <span class="mr-1 ml-2 font-light text-grey hidden xl:block"> |</span>
@@ -102,7 +102,12 @@
 
 <script>
 export default {
-    name:"FooterView"
+    name:"FooterView",
+    data(){
+      return{
+        email:""
+      }
+    }
 }
 </script>
 

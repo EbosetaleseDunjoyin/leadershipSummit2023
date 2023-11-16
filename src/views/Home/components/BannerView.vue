@@ -11,7 +11,7 @@
                         Get equipped with all you need to make global impact as a youth with AIESEC in Nigeria.
                     </p>
                     <div class="flex justify-start">
-                        <a href="#" class="flex primary-btn items-center text-[12px] lg:text-base text-black  border-white border my-2 ">
+                        <a href="/register" class="flex primary-btn items-center text-[12px] lg:text-base text-black  border-white border my-2 ">
                             Register for Leadership Summit 
                             <img class=" ml-1 lg:h-6" src="../../../assets/arrow.svg" alt="">
                         </a>
