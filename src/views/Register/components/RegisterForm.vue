@@ -65,7 +65,7 @@
                         </div>
 
                         <div class="form-inputs my-20 mx-auto fcd max-w-sm">
-                            <button type="submit" class="primary-btn border border-white text-black font-semibold text-3xl  w-full" :disabled="buttonText != submit" style="font-family:'Clash Display', sans-serif !important;">
+                            <button type="submit" class="primary-btn border border-white text-black font-semibold text-3xl  w-full" :disabled="buttonText != 'Submit'" style="font-family:'Clash Display', sans-serif !important;">
                                 {{ buttonText }}
                             </button>
                         </div>
