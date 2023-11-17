@@ -17,7 +17,7 @@
                         Young people need to develop a positive mindset and be a part of the change. The leadership summit event is AIESEC 
                         in Nigeria's way of contributing to societal and leadership development in youths and helping them achieve this 
                         change.
-                       
+                     
                     </p>
                </div>
                <div class="flex justify-start my-4">

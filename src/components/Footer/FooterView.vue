@@ -48,7 +48,7 @@
               <p class="text-[18px] fl text-[#D8D7D7] mb-2" >Contact</p>
                 <ul>
                   <li class="my-1" >
-                      <a href="" class="flex text-decoration-none text-grey  font-light">
+                      <a href="mailto:aiesecng21@gmail.com" class="flex text-decoration-none text-grey  font-light">
                          Email
                         <svg width="20" height="20" viewBox="0 0 19 19" fill="none" class="ml-1" xmlns="http://www.w3.org/2000/svg">
                           <path d="M6.77459 12.1441L12.9773 5.94141" stroke="#ffffff" stroke-width="0.974661" stroke-linecap="round" stroke-linejoin="round"/>
@@ -57,7 +57,7 @@
                       </a>
                   </li>
                   <li class="my-1" >
-                      <a href="" class="flex text-decoration-none text-grey  font-light">
+                      <a href="tel:09076349118" class="flex text-decoration-none text-grey  font-light">
                          Phone
                          <svg width="20" height="20" viewBox="0 0 19 19" fill="none" class="ml-1" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.77459 12.1441L12.9773 5.94141" stroke="#ffffff" stroke-width="0.974661" stroke-linecap="round" stroke-linejoin="round"/>
@@ -71,16 +71,16 @@
             <div class="my-4 lg:max-w-xs">
               <p class="text-[18px] fl text-[#D8D7D7] mb-2" >Socials</p>
                 <div class="flex gap-x-4">
-                  <a href="" class="text-decoration-none">
+                  <a href="https://www.linkedin.com/company/aiesec-in-nigeria" target="_blank" class="text-decoration-none">
                     <img src="../../assets/Socials/LinkedIn.svg" class="w-auto h-5" alt="">
                   </a>
-                  <a href="" class="text-decoration-none">
+                  <a href="https://x.com/AIESECinNigeria" target="_blank" class="text-decoration-none">
                     <img src="../../assets/Socials/X.svg" class="w-auto h-5" alt="">
                   </a>
-                  <a href="" class="text-decoration-none">
+                  <a href="https://www.instagram.com/aiesecinnigeria" target="_blank" class="text-decoration-none">
                     <img src="../../assets/Socials/Instagram.svg" class="w-auto h-5" alt="">
                   </a>
-                  <a href="" class="text-decoration-none">
+                  <a href="https://www.tiktok.com/@aiesecinnigeria?_t=8hPwZUTZFfZ&_r=1" target="_blank" class="text-decoration-none">
                     <img src="../../assets/Socials/TikTok.svg" class="w-auto h-5" alt="">
                   </a>
 

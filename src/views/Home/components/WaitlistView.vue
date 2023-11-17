@@ -11,9 +11,15 @@
                     <form @submit.prevent="submitMail()" action="" id="waitlistForm">
                         <div class="flex md:flex-row flex-col items-stretch justify-center gap-4">
                             <input  type="email" v-model="email" name="email" placeholder="Enter Email" class="fl" id="">
-                            <button type="submit" class=" w-100 flex text-center justify-center primary-btn fcd px-1 text-black text-base border-white border">
+                            <button type="submit" v-if="loading" class=" w-100 flex text-center items-center justify-center primary-btn fcd px-1 text-black text-base border-white border">
+                                Loading
+                                <svg class="spinner animate-spin ms-2" viewBox="0 0 50 50">
+                                    <circle class=" path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                </svg>
+                            </button>
+                            <button type="submit" v-else class=" w-100 flex text-center items-center justify-center primary-btn fcd px-1 text-black text-base border-white border">
                                 Join Waitlist
-                                <img class=" ml-1  xl:h-6" src="../../../assets/arrow.svg" alt="">
+                               <img class=" ml-1 lg:h-6" src="../../../assets/arrow.svg" alt="">
                             </button>
                         </div>
                     </form>
@@ -42,7 +48,8 @@ export default {
     name: "WaitlistView",
     data(){
         return{
-            email: ""
+            email: "",
+            loading:false
         }
     },
     methods:{
@@ -54,6 +61,7 @@ export default {
                  let formData = {
                     email : this.email
                  };
+                 this.loading = true
                
                 console.log(this.email);
                 fetch('/api/submit_email', {
@@ -64,9 +72,15 @@ export default {
                     body: JSON.stringify(formData), // Convert the data to JSON format
                 })
                 .then(response => {
+                    // console.log(response);
+                   
                     if (!response.ok) {
+                        this.loading = false
                         // throw new Error('Network response was not ok');
-                        this.notification("error", "Error", "This email already exists with us")
+                        //  if (response.status === 400) {
+                        //     this.notification("error", "Error", "This email already exists with us");
+                        // }
+                        //  this.notification("error", "Error", "An error occured, please try again");
                     }
                     return response.json(); // Assuming the response is JSON
                 })
@@ -75,13 +89,16 @@ export default {
                     this.email = ""
                     if(data && (data.detail === "registration success")){
                         this.notification("success", "Success", "Thank you we will be with you shortly")
-                    }else{
+                        this.loading = false;
+                    }
+                    else if(data && (data.detail === "already registered")){
                         this.notification("error", "Error", "This email already exists with us")
-                        
+                        this.loading = false;
                     }
                 })
                 .catch(error => {
                     // Handle errors that occurred during the fetch
+                    this.loading = false
                     console.error('There was a problem with the fetch operation:', error);
                 });
             }
@@ -126,5 +143,6 @@ export default {
                 }
             }
         }
+       
     }
 </style>

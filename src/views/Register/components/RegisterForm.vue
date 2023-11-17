@@ -67,6 +67,9 @@
                         <div class="form-inputs my-20 mx-auto fcd max-w-sm">
                             <button type="submit" class="primary-btn border border-white text-black font-semibold text-3xl  w-full" :disabled="buttonText != 'Submit'" style="font-family:'Clash Display', sans-serif !important;">
                                 {{ buttonText }}
+                                <svg class="spinner animate-spin ms-2" v-if="buttonText != 'Submit'" viewBox="0 0 50 50">
+                                        <circle class=" path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                    </svg>
                             </button>
                         </div>
 
@@ -131,6 +134,9 @@ export default {
             },
             buttonText : "Submit"
         }
+    },
+    mounted(){
+        console.log("Work")
     },
     setup(){
         // const { handleSubmit, errors } = useForm({
@@ -197,10 +203,9 @@ export default {
                         this.notification("success", "Success", "Thank you we will be with you shortly");
                         form.reset();
                         this.buttonText = "Submit"
-                    } else {
-                        this.notification("error", "Error", "This email already exists with us");
-                        this.buttonText = "Submit"
-
+                    } else if (data && (data.detail === "already registered")) {
+                        this.notification("error", "Error", "This email already exists with us")
+                        this.loading = false;
                     }
                 })
                 .catch(error => {
@@ -236,7 +241,7 @@ export default {
 
             if (check == true) {
                  this.submitForm();
-                 this.buttonText = "Loading...."
+                 this.buttonText = "Loading"
                 // console.log("gun");
                 //  event.preventDefault();
             }else{
