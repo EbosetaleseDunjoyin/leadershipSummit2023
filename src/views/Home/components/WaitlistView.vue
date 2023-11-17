@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <SuccessView v-if="modal" />
+        <SuccessView v-if="modal" :message="message" />
         <section class="bg-[#121212]  text-white overflow-hidden relative" id="waitlist">
               <div class="container mx-auto max-w-7xl px-6 xl:px-0 my-20 py-20 lg:my-24 z-[20] relative">
                   <div class="relative max-w-3xl mx-auto">
@@ -55,7 +55,8 @@ export default {
         return{
             email: "",
             loading:false,
-            modal:false
+            modal:false,
+            message: ""
         }
     },
     components:{ SuccessView },
@@ -140,7 +141,16 @@ export default {
                     // Handle the data retrieved from the API
                     this.email = ""
                     if(data && (data.detail === "registration success")){
-                        this.notification("success", "Success", "Thank you we will be with you shortly");
+                        // this.notification("success", "Success", "Thank you we will be with you shortly");
+                        this.message = `
+                            <div class="my-5 py-10 text-center">
+                                <h3 class="lg:text-4xl text-xl font-semibold" id="modal-title">Thank you for signing up.</h3>
+                                <div class="my-2">
+                                    <p class="text-base lg:text-xl mx-auto max-w-sm">You're now on our waitlist. Keep an eye out for updates in your mail.</p>
+                                </div>
+                                <a href="/" class="underline text-prime">Home</a>
+                            </div>
+                        `;
                         this.modal = true;
                         this.loading = false;
                     }

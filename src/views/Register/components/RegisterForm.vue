@@ -82,7 +82,7 @@
             </div>
         
         </section>
-        <SuccessView v-if="modal" />
+        <SuccessView v-if="modal" :message="message" />
     </div>
 </template>
 
@@ -139,7 +139,8 @@ export default {
             },
             buttonText : "Submit",
             isOpen: false,
-            modal:false
+            modal:false,
+            message:""
         }
     },
     components:{
@@ -212,7 +213,22 @@ export default {
                     // Handle the data retrieved from the API
                     this.email = ""
                     if (data && (data.detail === "registration success")) {
-                        this.notification("success", "Success", "Thank you we will be with you shortly");
+                        // this.notification("success", "Success", "Thank you we will be with you shortly");
+                        this.message= `    
+                                <div class="my-5 text-center">
+                                    <h3 class="lg:text-4xl text-xl font-semibold" id="modal-title">You've registered to attend Leadership Summit 2023</h3>
+                                    <div class="flex justify-center my-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20" fill="none">
+                                            <path d="M7.29289 19.7071C7.68342 20.0976 8.31658 20.0976 8.70711 19.7071L15.0711 13.3431C15.4616 12.9526 15.4616 12.3195 15.0711 11.9289C14.6805 11.5384 14.0474 11.5384 13.6569 11.9289L8 17.5858L2.34315 11.9289C1.95262 11.5384 1.31946 11.5384 0.928932 11.9289C0.538407 12.3195 0.538407 12.9526 0.928932 13.3431L7.29289 19.7071ZM7 -4.37114e-08L7 19L9 19L9 4.37114e-08L7 -4.37114e-08Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                    <div class="my-2">
+                                        <p class="text-base lg:text-xl mx-auto max-w-sm">Check your registered email for event details.</p>
+                                    </div>
+                                    <h3 class="lg:text-2xl text-xl font-semibold my-10">See you there!</h3>
+                                    <a href="/" class="underline text-prime">Home</a>
+                                </div>
+                        `;
                         this.modal = true
                         // this.$router.push('/alert/success');
                         form.reset();
