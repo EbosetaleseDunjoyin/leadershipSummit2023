@@ -26,13 +26,14 @@
                         </div>
                         <div class="form-inputs my-10 lg:my-20">
                             <div class="select-input">
-                                <select name="occupation" v-model="occupation" id="">
+                                <select name="occupation" v-model="occupation" id="" @focus="openDropdown()">
                                     <option value="" selected>Occupation</option>
                                     <option value="Student">Student</option>
                                     <option value="Corps Member">Corps Member</option>
                                     <option value="Unemployed">Unemployed</option>
                                     <option value="Employed">Employed</option>
                                 </select>
+                                <div class="arrow-icon" @click="toggleDropdown()"></div>
                             </div>
                             <div class="text-danger">{{ errors?.occupation }}</div>
                         </div>
@@ -134,7 +135,8 @@ export default {
                 join_event: "",
                 hear_about_event: "",
             },
-            buttonText : "Submit"
+            buttonText : "Submit",
+            isOpen: false
         }
     },
     mounted(){
@@ -271,6 +273,18 @@ export default {
                 type: 1,
                 position: "right top",
             });
+        },
+         openDropdown() {
+            this.isOpen = true;
+        },
+        closeDropdown() {
+            this.isOpen = false;
+        },
+        toggleDropdown() {
+            this.isOpen = !this.isOpen;
+            if (this.isOpen) {
+                this.$refs.select.focus();
+            }
         }
       
     }
@@ -329,20 +343,31 @@ export default {
             }
 
         }
-        &:after {
-        content: url('../../../assets/downArrow.png');
-            // font-size: 19px; /* Adjust font size as needed */
-            color: #ffffff; /* Arrow color */
+        // &:after {
+        // content: url('../../../assets/downArrow.png');
+        //     // font-size: 19px; /* Adjust font size as needed */
+        //     color: #ffffff; /* Arrow color */
+        //     position: absolute;
+        //     top: 55%;
+        //     right: 45px;
+        //     transform: translateY(-50%) ;
+        //     @media screen and (max-width:1000px) {
+        //         font-size: 12px;
+        //         right: 15%;
+        //         width: 10px;
+        //         height: auto;
+        //     }
+        // }
+         .arrow-icon {
+            content: url('../../../assets/downArrow.png');
             position: absolute;
-            top: 55%;
-            right: 45px;
-            transform: translateY(-50%) ;
-            @media screen and (max-width:1000px) {
-                font-size: 12px;
-                right: 15%;
-                width: 10px;
-                height: auto;
-            }
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            width: 24px; /* Adjust width and height according to your icon */
+            height: 24px;
+            cursor: pointer;
+            z-index: 1;
         }
     }
     .text-danger{

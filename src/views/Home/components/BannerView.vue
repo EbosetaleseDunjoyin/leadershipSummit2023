@@ -69,7 +69,7 @@ export default {
             }
         }
         .box-img {
-            background-image: url("../../../assets/banner-img.jfif");
+            background-image: url("../../../assets/banner-img.jpg");
             background-position: center;
             background-size: auto 530px;
             background-repeat: no-repeat;

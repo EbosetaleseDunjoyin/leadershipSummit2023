@@ -62,19 +62,19 @@
                     </div>
                     <div class="overflow-y-scroll sdg-cards h-96">
                         <div class=" flex flex-col gap-y-24">
-                            <div class="w-100 h-96 border-2 sdg-card border-apurple p-4 lg:p-6 rounded-[24px] relative overflow-hidden">
+                            <div class="w-full h-80 border-2 sdg-card border-apurple p-4 lg:p-6 rounded-[24px] relative overflow-hidden">
                                 <div class="sdg-title px-3 py-2 rounded-lg z-10 bg-white text-black lg:w-fit">
                                     <p class="font-bold text-center text-[14px]">SDG 4 - <span class="font-normal" >QUALITY EDUCATION</span></p>
                                 </div>
                                 <img src="../../../assets/SDG/sdg4.svg" class="absolute bottom-6 right-6 lg:-left-34  h-auto w-6 z-[2] "  alt="">
                             </div>
-                            <div class="w-100 h-96 border-2 sdg-card border-apurple p-4 lg:p-6 rounded-[24px] relative overflow-hidden">
+                            <div class="w-full h-80 border-2 sdg-card border-apurple p-4 lg:p-6 rounded-[24px] relative overflow-hidden">
                                 <div class="sdg-title px-3 py-2 rounded-lg z-10 bg-white text-black lg:w-fit">
                                     <p class="font-bold text-center text-[14px]">SDG 8 - <span class="font-normal" >Decent Work and Economic Growth</span></p>
                                 </div>
                                 <img src="../../../assets/SDG/sdg8.svg" class="absolute bottom-6 right-6 lg:-left-34  h-auto w-6 z-[2] "  alt="">
                             </div>
-                            <div class="w-100 h-96 border-2 sdg-card border-apurple p-4 lg:p-6 rounded-[24px] relative overflow-hidden">
+                            <div class="w-full h-80 border-2 sdg-card border-apurple p-4 lg:p-6 rounded-[24px] relative overflow-hidden">
                                 <div class="sdg-title px-3 py-2 rounded-lg z-10 bg-white text-black lg:w-fit">
                                     <p class="font-bold text-center text-[14px]">SDG 16 - <span class="font-normal" > Peace, Justice and Strong Institutions</span></p>
                                 </div>
@@ -100,7 +100,7 @@ export default {
 <style  lang="scss">
 #our-theme {
     .our-what-img {
-        background-image: url("../../../assets/ourTheme.jfif");
+        background-image: url("../../../assets/ourTheme.jpg");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -116,19 +116,19 @@ export default {
         background: transparent;
     }
     .sdg-card:nth-child(1){
-        background-image: url("../../../assets/SDG/sdg4.jfif");
+        background-image: url("../../../assets/SDG/sdg4.jpg");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
     }
     .sdg-card:nth-child(2){
-        background-image: url("../../../assets/SDG/sdg8.jfif");
+        background-image: url("../../../assets/SDG/sdg8.jpg");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
     }
     .sdg-card:nth-child(3){
-        background-image: url("../../../assets/SDG/sdg16.jfif");
+        background-image: url("../../../assets/SDG/sdg16.jpg");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;

@@ -48,7 +48,7 @@ export default {
 
 <style scoped lang="scss" >
     #about-aiesec{
-        background: url('../../../assets/aboutA.jfif'), lightgray 50% / cover no-repeat;
+        background: url('../../../assets/aboutA.jpg'), lightgray 50% / cover no-repeat;
         background-position: center right;
         background-repeat: no-repeat;
         background-size: cover;

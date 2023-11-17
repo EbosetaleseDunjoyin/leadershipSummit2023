@@ -44,7 +44,7 @@ export default {
 <style scoped lang="scss">
     #our-what{
       .our-what-img{
-        background-image: url("../../../assets/ourWHat.jfif");
+        background-image: url("../../../assets/ourWHat.jpg");
         background-position:top -70px center;
         background-size: cover;
         background-repeat: no-repeat;
