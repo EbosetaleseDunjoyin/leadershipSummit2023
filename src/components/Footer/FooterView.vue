@@ -24,7 +24,7 @@
               <p class="text-[18px] fl text-[#D8D7D7] mb-2" >About Us</p>
                 <ul>
                   <li class="my-1" >
-                      <a href="" class="flex text-decoration-none text-grey  font-light">
+                      <a href="https://aiesec.ng" class="flex text-decoration-none text-grey  font-light">
                          AIESEC in Nigeria
                         <svg width="20" height="20" viewBox="0 0 19 19" fill="none" class="ml-1" xmlns="http://www.w3.org/2000/svg">
                           <path d="M6.77459 12.1441L12.9773 5.94141" stroke="#ffffff" stroke-width="0.974661" stroke-linecap="round" stroke-linejoin="round"/>
@@ -33,8 +33,8 @@
                       </a>
                   </li>
                   <li class="my-1" >
-                      <a href="" class="flex text-decoration-none text-grey  font-light">
-                         Blog
+                      <a href="https://medium.com/@aiesecng21" class="flex text-decoration-none text-grey  font-light">
+                         Medium
                          <svg width="20" height="20" viewBox="0 0 19 19" fill="none" class="ml-1" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.77459 12.1441L12.9773 5.94141" stroke="#ffffff" stroke-width="0.974661" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6.83371 5.88163L13.0364 5.88163L13.0364 12.0843" stroke="#ffffff" stroke-width="0.974661" stroke-linecap="round" stroke-linejoin="round"/>

@@ -1,93 +1,94 @@
 <template>
    <div class="">
-            <section class="  text-white overflow-x-hidden relative" id="registerbanner">
-              <div class="container mx-auto max-w-7xl px-6 xl:px-0    relative ">
-                <form @submit.prevent="validateForm()" action="/register" method="post" id="registerForm">
-                    <p class="text-base lg:text-xl text-center my-10 font-normal">
-                        The registration form takes less than <span class="text-prime font-medium">3 minutes</span> to fill. Let's get to it.
-                    </p>
+        <section class="  text-white overflow-x-hidden relative" id="registerbanner">
+            <div class="container mx-auto max-w-7xl px-6 xl:px-0    relative ">
+            <form @submit.prevent="validateForm()" action="/register" method="post" id="registerForm">
+                <p class="text-base lg:text-xl text-center my-10 font-normal">
+                    The registration form takes less than <span class="text-prime font-medium">3 minutes</span> to fill. Let's get to it.
+                </p>
 
-                    <div class="lg:px-60">
-                        <div class="form-inputs my-10 lg:my-20">
-                            <input type="text" name="name" v-model="name" id="" placeholder="Full name">
-                            <div class="text-danger">{{ errors?.name }}</div>
+                <div class="lg:px-60">
+                    <div class="form-inputs my-10 lg:my-20">
+                        <input type="text" name="name" v-model="name" id="" placeholder="Full name">
+                        <div class="text-danger">{{ errors?.name }}</div>
+                    </div>
+                    <div class="form-inputs my-10 lg:my-20">
+                        <input type="email" name="email" v-model="email" id="" placeholder="Email address">
+                        <div class="text-danger">{{ errors?.email }}</div>
+                    </div>
+                    <div class="form-inputs my-10 lg:my-20">
+                        <input type="text" name="phone" v-model="phone" id="" placeholder="Phone number">
+                        <div class="text-danger">{{ errors?.phone }}</div>
+                    </div>
+                    <div class="form-inputs my-10 lg:my-20">
+                        <input type="text" name="state_residence" v-model="state_residence" id="" placeholder="State of Residence">
+                        <div class="text-danger">{{ errors?.state_residence }}</div>
+                    </div>
+                    <div class="form-inputs my-10 lg:my-20" @click="toggleDropdown('occupation')">
+                        <div class="select-input">
+                            <select name="occupation" v-model="occupation" id="" ref="select" @blur="closeDropdown()">
+                                <option class="" value="" selected>Occupation</option>
+                                <option value="Student">Student</option>
+                                <option value="Corps Member">Corps Member</option>
+                                <option value="Unemployed">Unemployed</option>
+                                <option value="Employed">Employed</option>
+                            </select>
+                            <div class="arrow-icon" ></div>
                         </div>
-                        <div class="form-inputs my-10 lg:my-20">
-                            <input type="email" name="email" v-model="email" id="" placeholder="Email address">
-                            <div class="text-danger">{{ errors?.email }}</div>
-                        </div>
-                        <div class="form-inputs my-10 lg:my-20">
-                            <input type="text" name="phone" v-model="phone" id="" placeholder="Phone number">
-                            <div class="text-danger">{{ errors?.phone }}</div>
-                        </div>
-                        <div class="form-inputs my-10 lg:my-20">
-                            <input type="text" name="state_residence" v-model="state_residence" id="" placeholder="State of Residence">
-                            <div class="text-danger">{{ errors?.state_residence }}</div>
-                        </div>
-                        <div class="form-inputs my-10 lg:my-20" @click="toggleDropdown('occupation')">
-                            <div class="select-input">
-                                <select name="occupation" v-model="occupation" id="" ref="select" @blur="closeDropdown()">
-                                    <option class="" value="" selected>Occupation</option>
-                                    <option value="Student">Student</option>
-                                    <option value="Corps Member">Corps Member</option>
-                                    <option value="Unemployed">Unemployed</option>
-                                    <option value="Employed">Employed</option>
+                        <div class="text-danger">{{ errors?.occupation }}</div>
+                    </div>
+                    <div class="form-inputs my-10 lg:my-20">
+                        <input type="text" name="school" v-model="school" id="" placeholder="If you're a student, what school?, else fill Nil">
+                        <div class="text-danger">{{ errors?.school }}</div>
+                    </div>
+                    <div class="form-inputs my-10 lg:my-20">
+                        <input type="text" name="expectations"   v-model="expectations"  id="" placeholder="What are your expectations from this event?">
+                        <div class="text-danger">{{ errors?.expectations }}</div>
+                    </div>
+                    <div class="form-inputs my-10 lg:my-20">
+                        <input type="text" name="sdg_knowledge" v-model="sdg_knowledge" id="" placeholder="What do you know about SDGs 4, 8 and 16?">
+                        <div class="text-danger">{{ errors?.sdg_knowledge }}</div>
+                    </div>
+                    <div class="form-inputs my-10 lg:my-20">
+                        
+                            <div class="select-input" @click="toggleDropdown('join')" >
+                                <select name="join_event" id="" v-model="join_event" ref="join" @blur="closeDropdown()">
+                                    <option class="" value="" selected>How  will you join the event?</option>
+                                    <option value="Onsite">Onsite</option>
+                                    <option value="Online">Online</option>
                                 </select>
                                 <div class="arrow-icon" ></div>
                             </div>
-                            <div class="text-danger">{{ errors?.occupation }}</div>
-                        </div>
-                        <div class="form-inputs my-10 lg:my-20">
-                            <input type="text" name="school" v-model="school" id="" placeholder="If you're a student, what school?, else fill Nil">
-                            <div class="text-danger">{{ errors?.school }}</div>
-                        </div>
-                        <div class="form-inputs my-10 lg:my-20">
-                            <input type="text" name="expectations"   v-model="expectations"  id="" placeholder="What are your expectations from this event?">
-                            <div class="text-danger">{{ errors?.expectations }}</div>
-                        </div>
-                        <div class="form-inputs my-10 lg:my-20">
-                            <input type="text" name="sdg_knowledge" v-model="sdg_knowledge" id="" placeholder="What do you know about SDGs 4, 8 and 16?">
-                            <div class="text-danger">{{ errors?.sdg_knowledge }}</div>
-                        </div>
-                        <div class="form-inputs my-10 lg:my-20">
-                            
-                             <div class="select-input" @click="toggleDropdown('join')" >
-                                    <select name="join_event" id="" v-model="join_event" ref="join" @blur="closeDropdown()">
-                                        <option class="" value="" selected>How  will you join the event?</option>
-                                        <option value="Onsite">Onsite</option>
-                                        <option value="Online">Online</option>
-                                    </select>
-                                    <div class="arrow-icon" ></div>
-                                </div>
-                            <div class="text-danger">{{ errors?.join_event }}</div>
-                        </div>
-                        <div class="form-inputs my-10 lg:my-20">
-                            <input type="text" name="hear_about_event" v-model="hear_about_event" id="" placeholder="How did you hear about this event?">
-                            <div class="text-danger">{{ errors?.hear_about_event }}</div>
-                        </div>
-
-                        <div class="form-inputs my-10 lg:my-20 mx-auto fcd max-w-sm">
-                            <button type="submit" class="flex justify-center items-center primary-btn border border-white text-black font-semibold text-3xl  w-full" :disabled="buttonText != 'Submit'" style="font-family:'Clash Display', sans-serif !important;">
-                                <div class="">
-                                    {{ buttonText }}
-                                </div>
-                                <svg class="spinner animate-spin ms-2" v-if="buttonText != 'Submit'" viewBox="0 0 50 50">
-                                    <circle class=" path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-                                </svg>
-                            </button>
-                        </div>
-
+                        <div class="text-danger">{{ errors?.join_event }}</div>
                     </div>
-                </form>
-              </div>
-          
-            </section>
-       
-        </div>
+                    <div class="form-inputs my-10 lg:my-20">
+                        <input type="text" name="hear_about_event" v-model="hear_about_event" id="" placeholder="How did you hear about this event?">
+                        <div class="text-danger">{{ errors?.hear_about_event }}</div>
+                    </div>
+
+                    <div class="form-inputs my-10 lg:my-20 mx-auto fcd max-w-sm">
+                        <button type="submit" class="flex justify-center items-center primary-btn border border-white text-black font-semibold text-3xl  w-full" :disabled="buttonText != 'Submit'" style="font-family:'Clash Display', sans-serif !important;">
+                            <div class="">
+                                {{ buttonText }}
+                            </div>
+                            <svg class="spinner animate-spin ms-2" v-if="buttonText != 'Submit'" viewBox="0 0 50 50">
+                                <circle class=" path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+            </div>
+        
+        </section>
+        <SuccessView v-if="modal" />
+    </div>
 </template>
 
 <script>
-import Notify from 'simple-notify'
+import Notify from 'simple-notify';
+import SuccessView from '../../../components/SuccessView.vue';
 // import { useField, useForm } from 'vee-validate';
 // import { toTypedSchema } from '@vee-validate/zod';
 // import * as zod from 'zod'
@@ -137,8 +138,12 @@ export default {
                 hear_about_event: "",
             },
             buttonText : "Submit",
-            isOpen: false
+            isOpen: false,
+            modal:false
         }
+    },
+    components:{
+        SuccessView
     },
     mounted(){
         // console.log("Work")
@@ -208,6 +213,8 @@ export default {
                     this.email = ""
                     if (data && (data.detail === "registration success")) {
                         this.notification("success", "Success", "Thank you we will be with you shortly");
+                        this.modal = true
+                        // this.$router.push('/alert/success');
                         form.reset();
                         this.buttonText = "Submit"
                     } else if (data && (data.detail === "already registered")) {
@@ -221,6 +228,9 @@ export default {
                     this.notification("error", "Error", "There was a problem with the fetch operation.");
                     this.buttonText = "Submit"
                 });
+       },
+       formReset(){
+
        },
        validateForm(){
         // let form = document.getElementById("registerForm");
