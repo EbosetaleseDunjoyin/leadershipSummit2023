@@ -28,7 +28,7 @@
                         <p class="fcd text-grey text-center relative">
                             We promise not to <span class="text-dpurple" >spam</span> you.
                         </p>
-                        <img src="../../../assets/banner-star.svg" class="absolute -top-4 -left-6 h-auto w-10 z-[2] hidden xl:block"  alt="">
+                        <img src="../../../assets/banner-star.svg" class="absolute -top-4 -left-6 h-auto w-10 z-[2] "  alt="">
                     </div>
                 </div>
             </div>
@@ -44,6 +44,7 @@
 
 <script>
 import Notify from 'simple-notify'
+// import axios from 'axios'
 export default {
     name: "WaitlistView",
     data(){
@@ -63,14 +64,59 @@ export default {
                  };
                  this.loading = true
                
-                console.log(this.email);
-                fetch('https://ainbackend.fly.dev/api/submit_email', {
+                // console.log(this.email);
+                // axios({
+                //     method: 'post',
+                //     url: 'https://ainbackend.fly.dev/api/submit_email',
+                //     headers: {
+                //         'Content-Type': 'application/json',
+                //         // 'Access-Control-Allow-Origin': '*', // Set the content type to JSON
+                //     },
+                //     data: JSON.stringify(formData)
+
+                // }).then(response => {
+                //     // console.log(response);
+                   
+                //     if (!response.ok) {
+                //         this.loading = false
+                      
+                //     }
+                //     return response.json(); // Assuming the response is JSON
+                // })
+                // .then(data => {
+                //     // Handle the data retrieved from the API
+                //     this.email = ""
+                //     if(data && (data.detail === "registration success")){
+                //         this.notification("success", "Success", "Thank you we will be with you shortly")
+                //         this.loading = false;
+                //     }
+                //     else if(data && (data.detail === "already registered")){
+                //         this.notification("error", "Error", "This email already exists with us")
+                //         this.loading = false;
+                //     }
+                // })
+                // .catch(error => {
+                //     // Handle errors that occurred during the fetch
+                //     this.loading = false
+                //     this.notification("error", "Error", "There was a problem with the fetch operation.")
+                //     console.error('There was a problem with the fetch operation:', error);
+                // });
+                const testURL = 'https://ainbackend.fly.dev/api/submit_email';
+                const myInit = {
                     method: 'POST',
+                    // mode: 'no-cors',
+                    // mode: 'cors',
                     headers: {
-                        'Content-Type': 'application/json', // Set the content type to JSON
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*', 
                     },
-                    body: JSON.stringify(formData), // Convert the data to JSON format
-                })
+                    body: JSON.stringify(formData),
+                    // body: formData, 
+                };
+
+                // const myRequest = new Request(testURL, myInit);
+
+                fetch(testURL, myInit)
                 .then(response => {
                     // console.log(response);
                    
@@ -99,6 +145,7 @@ export default {
                 .catch(error => {
                     // Handle errors that occurred during the fetch
                     this.loading = false
+                    this.notification("error", "Error", "There was a problem with the fetch operation.")
                     console.error('There was a problem with the fetch operation:', error);
                 });
             }

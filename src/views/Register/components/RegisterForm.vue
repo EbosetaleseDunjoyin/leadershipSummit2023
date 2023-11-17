@@ -8,23 +8,23 @@
                     </p>
 
                     <div class="lg:px-60">
-                        <div class="form-inputs my-20">
+                        <div class="form-inputs my-10 lg:my-20">
                             <input type="text" name="name" v-model="name" id="" placeholder="Full name">
                             <div class="text-danger">{{ errors?.name }}</div>
                         </div>
-                        <div class="form-inputs my-20">
+                        <div class="form-inputs my-10 lg:my-20">
                             <input type="email" name="email" v-model="email" id="" placeholder="Email address">
                             <div class="text-danger">{{ errors?.email }}</div>
                         </div>
-                        <div class="form-inputs my-20">
+                        <div class="form-inputs my-10 lg:my-20">
                             <input type="text" name="phone" v-model="phone" id="" placeholder="Phone number">
                             <div class="text-danger">{{ errors?.phone }}</div>
                         </div>
-                        <div class="form-inputs my-20">
+                        <div class="form-inputs my-10 lg:my-20">
                             <input type="text" name="state_residence" v-model="state_residence" id="" placeholder="State of Residence">
                             <div class="text-danger">{{ errors?.state_residence }}</div>
                         </div>
-                        <div class="form-inputs my-20">
+                        <div class="form-inputs my-10 lg:my-20">
                             <div class="select-input">
                                 <select name="occupation" v-model="occupation" id="">
                                     <option value="" selected>Occupation</option>
@@ -36,19 +36,19 @@
                             </div>
                             <div class="text-danger">{{ errors?.occupation }}</div>
                         </div>
-                        <div class="form-inputs my-20">
+                        <div class="form-inputs my-10 lg:my-20">
                             <input type="text" name="school" v-model="school" id="" placeholder="If you're a student, what school?, else fill Nil">
                             <div class="text-danger">{{ errors?.school }}</div>
                         </div>
-                        <div class="form-inputs my-20">
+                        <div class="form-inputs my-10 lg:my-20">
                             <input type="text" name="expectations"   v-model="expectations"  id="" placeholder="What are your expectations from this event?">
                             <div class="text-danger">{{ errors?.expectations }}</div>
                         </div>
-                        <div class="form-inputs my-20">
+                        <div class="form-inputs my-10 lg:my-20">
                             <input type="text" name="sdg_knowledge" v-model="sdg_knowledge" id="" placeholder="What do you know about SDGs 4, 8 and 16?">
                             <div class="text-danger">{{ errors?.sdg_knowledge }}</div>
                         </div>
-                        <div class="form-inputs my-20">
+                        <div class="form-inputs my-10 lg:my-20">
                             
                              <div class="select-input">
                                     <select name="join_event" id="" v-model="join_event">
@@ -59,17 +59,19 @@
                                 </div>
                             <div class="text-danger">{{ errors?.join_event }}</div>
                         </div>
-                        <div class="form-inputs my-20">
+                        <div class="form-inputs my-10 lg:my-20">
                             <input type="text" name="hear_about_event" v-model="hear_about_event" id="" placeholder="How did you hear about this event?">
                             <div class="text-danger">{{ errors?.hear_about_event }}</div>
                         </div>
 
-                        <div class="form-inputs my-20 mx-auto fcd max-w-sm">
-                            <button type="submit" class="primary-btn border border-white text-black font-semibold text-3xl  w-full" :disabled="buttonText != 'Submit'" style="font-family:'Clash Display', sans-serif !important;">
-                                {{ buttonText }}
+                        <div class="form-inputs my-10 lg:my-20 mx-auto fcd max-w-sm">
+                            <button type="submit" class="flex justify-center items-center primary-btn border border-white text-black font-semibold text-3xl  w-full" :disabled="buttonText != 'Submit'" style="font-family:'Clash Display', sans-serif !important;">
+                                <div class="">
+                                    {{ buttonText }}
+                                </div>
                                 <svg class="spinner animate-spin ms-2" v-if="buttonText != 'Submit'" viewBox="0 0 50 50">
-                                        <circle class=" path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-                                    </svg>
+                                    <circle class=" path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                </svg>
                             </button>
                         </div>
 
@@ -136,7 +138,7 @@ export default {
         }
     },
     mounted(){
-        console.log("Work")
+        // console.log("Work")
     },
     setup(){
         // const { handleSubmit, errors } = useForm({
@@ -183,8 +185,10 @@ export default {
                 let form = document.getElementById("registerForm");
                 fetch('https://ainbackend.fly.dev/api/register_delegate', {
                     method: 'POST',
+                    // mode:"same-origin",
                     headers: {
-                        'Content-Type': 'application/json', // Set the content type to JSON
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*',  // Set the content type to JSON
                     },
                     body: JSON.stringify(formData), // Convert the data to JSON format
                 })
@@ -229,6 +233,8 @@ export default {
                 if (this[el] === '') {
                     this.errors[el] = 'This field is required';
                     check = false;
+                }else if(this[el] !== ''){
+                    this.errors[el] = '';
                 }
             });
             
@@ -324,13 +330,19 @@ export default {
 
         }
         &:after {
-        content: url('../../../assets/downArrow.svg');
-            font-size: 19px; /* Adjust font size as needed */
+        content: url('../../../assets/downArrow.png');
+            // font-size: 19px; /* Adjust font size as needed */
             color: #ffffff; /* Arrow color */
             position: absolute;
-            top: 50%;
+            top: 55%;
             right: 45px;
             transform: translateY(-50%) ;
+            @media screen and (max-width:1000px) {
+                font-size: 12px;
+                right: 15%;
+                width: 10px;
+                height: auto;
+            }
         }
     }
     .text-danger{
