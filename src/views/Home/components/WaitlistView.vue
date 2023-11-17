@@ -55,7 +55,7 @@ export default {
         return{
             email: "",
             loading:false,
-            modal:true
+            modal:false
         }
     },
     components:{ SuccessView },
