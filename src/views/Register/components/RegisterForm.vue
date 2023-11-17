@@ -181,7 +181,7 @@ export default {
                 // console.log(formData);
                 // return false;
                 let form = document.getElementById("registerForm");
-                fetch('/api/register_delegate', {
+                fetch('https://ainbackend.fly.dev/api/register_delegate', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json', // Set the content type to JSON
