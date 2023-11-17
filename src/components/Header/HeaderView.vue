@@ -33,19 +33,19 @@
             <div class="hidden lg:flex">
 
               <div class="hidden lg:flex items-center fcd font-normal gap-x-4 xl:gap-x-8">
-                <a @click="setActiveName('#our-what')" href="#our-what" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true, "active": isActiveName === "#our-what" }'>
+                <a @click="setActiveName('#our-what')" href="/#our-what" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true, "active": isActiveName === "#our-what" }'>
                   Our What
                   <div class=""></div>
                 </a>
-                <a @click="setActiveName('#our-theme')" href="#our-theme" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active": isActiveName === "#our-theme" }'>
+                <a @click="setActiveName('#our-theme')" href="/#our-theme" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active": isActiveName === "#our-theme" }'>
                   Our Theme
                   <div class=""></div>
                 </a>
-                <a @click="setActiveName('#why-attend')" href="#why-attend" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active": isActiveName === "#why-attend" }'>
+                <a @click="setActiveName('#why-attend')" href="/#why-attend" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active": isActiveName === "#why-attend" }'>
                   Why Attend?
                   <div class=""></div>
                 </a>
-                <a @click="setActiveName('#about-aiesec')" href="#about-aiesec" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active": isActiveName === "#about-aiesec" }'>
+                <a @click="setActiveName('#about-aiesec')" href="/#about-aiesec" :class='{"text-[13px] xl:text-base leading-5 nav-link font-normal ":true,"active": isActiveName === "#about-aiesec" }'>
                   About AIESEC
                   <div class=""></div>
                 </a>
@@ -66,19 +66,19 @@
                     <div class=" divide-y divide-white">
                       <div class=" py-6 px-4">
                         
-                          <a @click="setActiveName('#our-what')" href="#our-what" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#our-what" }'>
+                          <a @click="setActiveName('#our-what')" href="/#our-what" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#our-what" }'>
                             Our What
                             <div class=""></div>
                           </a>
-                          <a @click="setActiveName('#our-theme')" href="#our-theme" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#our-theme" }'>
+                          <a @click="setActiveName('#our-theme')" href="/#our-theme" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#our-theme" }'>
                             Our Theme
                             <div class=""></div>
                           </a>
-                          <a @click="setActiveName('#why-attend')" href="#why-attend" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#why-attend" }'>
+                          <a @click="setActiveName('#why-attend')" href="/#why-attend" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#why-attend" }'>
                             Why Attend?
                             <div class=""></div>
                           </a>
-                          <a @click="setActiveName('#about-aiesec')" href="#about-aiesec" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#about-aiesec" }'>
+                          <a @click="setActiveName('#about-aiesec')" href="/#about-aiesec" :class='{ "mb-10 flex flex-col justify-center text-center leading-5 nav-link font-normal ": true, "active": isActiveName === "#about-aiesec" }'>
                             About AIESEC
                             <div class=""></div>
                           </a>

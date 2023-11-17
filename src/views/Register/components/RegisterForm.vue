@@ -24,16 +24,16 @@
                             <input type="text" name="state_residence" v-model="state_residence" id="" placeholder="State of Residence">
                             <div class="text-danger">{{ errors?.state_residence }}</div>
                         </div>
-                        <div class="form-inputs my-10 lg:my-20">
+                        <div class="form-inputs my-10 lg:my-20" @click="toggleDropdown('occupation')">
                             <div class="select-input">
-                                <select name="occupation" v-model="occupation" id="" @focus="openDropdown()">
-                                    <option value="" selected>Occupation</option>
+                                <select name="occupation" v-model="occupation" id="" ref="select" @blur="closeDropdown()">
+                                    <option class="" value="" selected>Occupation</option>
                                     <option value="Student">Student</option>
                                     <option value="Corps Member">Corps Member</option>
                                     <option value="Unemployed">Unemployed</option>
                                     <option value="Employed">Employed</option>
                                 </select>
-                                <div class="arrow-icon" @click="toggleDropdown()"></div>
+                                <div class="arrow-icon" ></div>
                             </div>
                             <div class="text-danger">{{ errors?.occupation }}</div>
                         </div>
@@ -51,12 +51,13 @@
                         </div>
                         <div class="form-inputs my-10 lg:my-20">
                             
-                             <div class="select-input">
-                                    <select name="join_event" id="" v-model="join_event">
-                                        <option value="" selected>How  will you join the event?</option>
+                             <div class="select-input" @click="toggleDropdown('join')" >
+                                    <select name="join_event" id="" v-model="join_event" ref="join" @blur="closeDropdown()">
+                                        <option class="" value="" selected>How  will you join the event?</option>
                                         <option value="Onsite">Onsite</option>
                                         <option value="Online">Online</option>
                                     </select>
+                                    <div class="arrow-icon" ></div>
                                 </div>
                             <div class="text-danger">{{ errors?.join_event }}</div>
                         </div>
@@ -274,16 +275,17 @@ export default {
                 position: "right top",
             });
         },
-         openDropdown() {
-            this.isOpen = true;
+        toggleDropdown(ref) {
+            this.isOpen = !this.isOpen;
+            if (this.isOpen && ref === "occupation") {
+                this.$refs.select.focus();
+            }else{
+                this.$refs.join.focus();
+            }
         },
         closeDropdown() {
-            this.isOpen = false;
-        },
-        toggleDropdown() {
-            this.isOpen = !this.isOpen;
             if (this.isOpen) {
-                this.$refs.select.focus();
+                this.isOpen = false;
             }
         }
       
@@ -313,12 +315,20 @@ export default {
         }
 
     }
+    .txt-ggrey{
+        color: #909090 !important;
+    }
     .select-input{
         position: relative;
         select{
             appearance: none; /* Disable default appearance */
             -webkit-appearance: none; /* For older versions of Chrome/Safari */
             -moz-appearance: none;
+            padding-right: 20px; 
+            // color: #909090 !important;
+            // &:first-child:checked{
+            //     color: #909090 !important;
+            // }
             &::-ms-expand {
                 display: none;
             }
@@ -333,6 +343,7 @@ export default {
             }
             option{
                 background: black !important;
+                color: #ffffff !important;
                 &:first-child:checked{
                     color: #909090 !important;
                 }
